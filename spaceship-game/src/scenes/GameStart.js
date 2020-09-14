@@ -16,7 +16,7 @@ class GameStart extends Phaser.Scene {
         this.text.originX = 0.5;
         this.text.originY = 0.5;
         this.cache.game.n_trials = this.cache.game.trial_info.positions_A.length;
-        this.cache.game.n_trials = 10;
+        // this.cache.game.n_trials = 10;
         this.text.setText('Welcome!\n\n' +
             'Your task is to pilot a spaceship and avoid asteroids\n\n' +
             'The game ends when you pass (or crash into) ' + this.cache.game.n_trials + ' asteroid belts,\n\nregardless of how much you get hit\n\n' +
