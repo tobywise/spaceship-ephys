@@ -3,7 +3,7 @@
 
 ## Running the game
 
-To run the game, just enter a subject ID and click start.
+Point the browser to `spaceship-game/index.html` to start the task. To run the game, just enter a subject ID and click start.
 
 ## Modifying the game
 
@@ -27,3 +27,4 @@ An example data file (for just 10 trials) is provided in the `data` directory an
 
 * The sampling rate seems a little inconsistent - this isn't a major problem, but I'll try to fix it.
 * Currently it doesn't output any indication of where the safe location is. This isn't a big issue as this is set in the trial info that the game uses to determine where to place the safe locations, so we can always just link this up to the data from the task. I'll try to get it to output this information anyway though.
+* Currently the task requires and internet connection (this is just for loading libraries/fonts). This can be removed if necessary.
