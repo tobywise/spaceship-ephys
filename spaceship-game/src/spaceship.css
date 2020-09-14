@@ -1,12 +1,81 @@
 /* Font from Google fonts */
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900");
+@import url("https://fonts.googleapis.com/css?family=Rubik:300,400,500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Aldrich&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Londrina+Solid:100&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap');
+
 /* Color palette */
 /* Basic styles */
 html, body {
     height: 100%;
-    font-family: 'Source Sans Pro', sans-serif;
-    background-color: #efefef;
-    color: #303030;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: 'Rubik', sans-serif;
+    margin: 0px;
+    /* background-color: #efefef; */
+    color: #e0e0e0;
+    background: rgb(2,0,50);
+    background: linear-gradient(142deg, rgba(2,0,50,1) 0%, rgba(0,13,87,1) 69%, rgba(52,0,111,1) 100%) fixed;
+}
+
+h3 {
+    font-family: 'Bungee Shade';
+    color: #dadada;
+    font-size: 35px;
+    text-align: center;
+    font-weight: 900;
+    /* margin-bottom: 0px; */
+    margin:0px;
+}
+
+h2 {
+    font-family: 'Bungee Shade';
+    color: #e0e0e0;
+    font-size: 100px;
+    text-align: center;
+}
+
+.instructionText {
+    font-family: 'Rubik';
+    font-size: 20px;
+    text-align: center;
+    font-weight: 300;
+    margin: 20px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+    max-width: 50%;
+}
+
+.instructionImage {
+    font-family: 'Rubik';
+    font-size: 20px;
+    text-align: center;
+    font-weight: 300;
+    margin: 20px;
+    margin-bottom: 20px;
+    flex-grow: 0.5;
+
+}
+
+.instructionCheckText {
+    font-family: 'Rubik';
+    font-size: 20px;
+    text-align: center;
+    font-weight: 300;
+    margin: 20px;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+}
+
+.instructionPanel {
+    background: rgba(187, 187, 187, 0.15);  
+    margin: 20px auto;
+}
+
+.instructionContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .complete_screen {
@@ -32,7 +101,7 @@ html, body {
     /*margin-top: 100px;*/
     text-align: center;
     font-size: 18px;
-    color: #303030;
+    color: #d8d8d8;
 }
 
 /* Customize the label (the container) */
@@ -103,13 +172,13 @@ html, body {
 
 .form__header {
     margin-bottom: 25px;
-    border-bottom: 1px dashed rgba(48, 48, 48, 0.15);
+    /* border-bottom: 0.5px dashed #c5c5c569; */
     height: auto;
     color: #575757;
 }
 
 .form__title {
-    font-size: 35px;
+    font-size: 55px;
     margin: 2px 0;
 }
 
@@ -124,6 +193,8 @@ html, body {
 .form__options {
     border: none;
     padding: 0 0 50px 0;
+    /* background: rgb(20, 17, 102); */
+    
 }
 
 .form__question {
@@ -133,7 +204,8 @@ html, body {
 .questionDemo {
     margin: 60px 0 0 0;
     font-size: 25px;
-    line-height: 15px
+    line-height: 15px;
+    width: 100%
 }
 
 .form__answer {
@@ -142,11 +214,11 @@ html, body {
     box-sizing: border-box;
     width: 100%;
     margin: 20px 0 20px 0;
-    height: 100px;
+    /* height: 200px; */
     vertical-align: middle;
     font-size: 22px;
     text-align: center;
-    color: #0092ff;
+    color: #e9e9e9;
 }
 
 .textEntry {
@@ -157,9 +229,9 @@ html, body {
     margin: 20px 1% 20px 1%;
     height: 100px;
     vertical-align: middle;
-    font-size: 20px;
+    font-size: 40px;
     text-align: center;
-    color: #0092ff;
+    color: #00508d;
 }
 
 textarea {
@@ -170,22 +242,24 @@ textarea {
 }
 
 label {
-    border: 1px solid rgba(48, 48, 48, 0.15);
+    border: 1px solid rgba(187, 187, 187, 0.15);
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
     height: 100%;
     width: 100%;
-    padding: 30px 10px 30px 10px;
+    padding: 10px 10px 10px 10px;
     cursor: pointer;
-    vertical-align: middle;
+    font-style: 'Rubik';
+    /* vertical-align: middle; */
     /*opacity: .5;*/
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
-    background-color: #f5f5f5;
+    background-color: #f5f5f515;
 }
 label:hover, label:focus, label:active {
-    border: 1px solid rgba(48, 48, 48, 0.5);
+    border: 1px solid #ebebebd3;
+    background-color: #f5f5f573
 }
 
 .subjectID {
@@ -201,15 +275,18 @@ label:hover, label:focus, label:active {
     height: 60px;
     width: 200px;
     border: none;
-    background-color: #005da9;
+    background-color: #3957b8;
     color: #f5f5f5;
     text-transform: uppercase;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Rubik', sans-serif;
     padding: 0 20px;
     border-radius: 20px;
     font-weight: 900;
     cursor: pointer;
-    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
     -webkit-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out;
     font-size: 22px;
@@ -239,11 +316,13 @@ input[type="radio"] {
 
 input[type="radio"]:active ~ label {
     opacity: 1;
+    background: #0092ff;
 }
 
 input[type="radio"]:checked ~ label {
     opacity: 1;
     border: 1px solid #303030;
+    background: #0092ff;
 }
 
 /* Footer Styles */
@@ -297,7 +376,7 @@ img {
     -webkit-appearance: none;  /* Override default CSS styles */
     width: 50%; /* Full-width */
     height: 50px; /* Specified height */
-    background: #efefef; /* Grey background */
+    background: #efefef00; /* Grey background */
     outline: none; /* Remove outline */
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
@@ -317,7 +396,7 @@ img {
     height: 36px;
     width: 10px;
     border-radius: 3px;
-    background: #0063b9;
+    background: #ffffff; /* Green background */
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -14px;
@@ -327,7 +406,7 @@ img {
     width: 100%;
     height: 8.4px;
     cursor: pointer;
-    background: #cbcbcb;
+    background: #acacac;
     border-radius: 1.3px;
     border: none;
     margin: auto;
@@ -336,7 +415,7 @@ img {
 .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 50px; /* Slider handle height */
-    background: #0063b9; /* Green background */
+    background: #ffffff; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
 
@@ -345,7 +424,7 @@ img {
     height: 8.4px;
     cursor: pointer;
     box-shadow: none;
-    background: #3071a9;
+    background: #acacac;
     border-radius: 1.3px;
     border: none;
 }
@@ -371,4 +450,12 @@ img {
 .task__title {
     font-size: 8vw;
     margin: 2vw 0;
+}
+
+input {
+    font-family: 'Rubik';
+    font-size: 40px;
+    text-align: center;
+    font-weight: 300;
+    margin-top: 20px
 }

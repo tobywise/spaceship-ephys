@@ -1,60 +1,29 @@
 
-# **Associations between aversive learning processes and transdiagnostic psychiatric symptoms revealed by large-scale phenotyping**
+# **Spaceship game for human electrophysiology**
 
-https://www.biorxiv.org/content/10.1101/843045v1
+## Running the game
 
-Toby Wise & Raymond J. Dolan
+To run the game, just enter a subject ID and click start.
 
-_BioRxiv_, 2019 
+## Modifying the game
 
+To modify aspects of the game, go to `spaceship-game/src/index.js` and look for the highlighted section (_"USE THESE SETTINGS TO MODIFY THE GAME"_).
 
-## Code
+In terms of timing, this can be modified if needed. The shorter the ITI, the less time the task takes to run. I've found that anything over 2 seconds seems to work fine, although currently it's set to 3 seconds. 
 
-Analyses for this project are contained within Jupyter notebooks (in the `/notebooks` directory). Python 2.7 was used for all these analysese, and the code will most likely not run smoothly with Python 3.
+The asteroids can be made to move faster or slower. It's currently set to the speed used in the _Nature Communications_ paper, and that seemed to work fine. It essentially needs to be fast enough that it's not really possible to reactively avoid the asteroids, as we ideally want subjects pre-empting their position. If the asteroids are too slow, they can be avoided without subjects having to position themselves in advance. However - if they move too fast the game starts too feel a little too frustrating!
 
-All the main analyis is run in Jupyter notebooks, and these notebooks make use of scripts located in the `/code` directory along with standard Python packages (e.g. numpy, pandas, matplotlib etc).
+## Saving data
 
-In addition, they require a package called [DMPy](https://github.com/tobywise/DMpy/tree/baf71241a1ecff20a3908c99ec236e7a06c49474) (this package is half-written and doesn't have much functionality beyond that required for this project).
+The game saves data temporarily to the browser's cache - this means that unless the cache is cleared, the data will persist, so if anything goes wrong the data will still be there.
 
-## Notebooks
+To save data to disk, point the browser to `/saveData.html` (this page also appears once the task has been completed). This gives options to save the data for a single subject, or to save all data in the cache. There is also an option to clear the cache.
 
-The majority of the analysis reported in the paper is run in a series of Jupyter notebooks, which are located in the `/notebooks` directory. The only exception is the fitting of behavioural models, which was run on a HPC cluster for speed (code for this model fitting is provided in the `/code` directory).
+## Analyis
 
-There are 4 notebooks, each of which runs a specific section of the analysis pipeline and produces all the figures etc. associated with it.
+An example data file (for just 10 trials) is provided in the `data` directory and there is a Jupyter notebook showing how to extract and look at data in Python (`notebooks/analysis.ipynb`).
 
-### 1. Task data preprocessing
+## Current issues
 
-`preprocessing.ipynb`
-
-This data takes the raw data from the task and extracts the behavioural variables of interest. This notebook is parameterised through [Papermill](https://papermill.readthedocs.io/) and is run for each subject individually. The script to run this is in the `code` directory, and the output notebooks for every subject are provided in the `/notebooks/preprocessing` directory.
-
-### 2. Questionnaire analysis
-
-`questionnaire_analysis.ipynb`
-
-This notebook processes our questionnaire measures, and calculates scores on three transdiagnostic factors.
-
-### 3. Behavioural analyses and model fitting
-`behavioural_analysis.ipynb`
-
-This notebooks performs analyses looking at how attention affects learning.
-
-### 4. Analyses relating behaviour to psychopathology
-
-`psychopathology_analysis.ipynb`
-
-This notebook runs regression analyses examining relationships between questionnaire measures and behavioural variables.
-
-## Task
-
-![url](https://raw.githubusercontent.com/tobywise/tobywise.github.io/master/img/game_example.gif "The spaceship game")
-
-_The game used to examine aversive learning processes online_
-
-Code for the task is provided in `/firebase/public/`. The task is coded in JavaScript, mainly using the [Phaser 3](https://phaser.io/phaser3) game development framework.
-
-A demo of the task can be found [here](https://tw-spaceship-game.firebaseapp.com/).
-
-## Data
-
-All data is available on the Open Science Framework [here](https://osf.io/b95w2/).
+* The sampling rate seems a little inconsistent - this isn't a major problem, but I'll try to fix it.
+* Currently it doesn't output any indication of where the safe location is. This isn't a big issue as this is set in the trial info that the game uses to determine where to place the safe locations, so we can always just link this up to the data from the task. I'll try to get it to output this information anyway though.
