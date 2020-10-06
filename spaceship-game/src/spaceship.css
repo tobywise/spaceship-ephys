@@ -1,8 +1,15 @@
-/* Font from Google fonts */
-@import url("https://fonts.googleapis.com/css?family=Rubik:300,400,500&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Aldrich&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Londrina+Solid:100&display=swap");
-@import url('https://fonts.googleapis.com/css?family=Bungee+Shade&display=swap');
+
+
+
+@font-face {
+    font-family: 'Bungee Shade';
+    src:  url('../assets/fonts/BungeeShade-Regular.ttf') format('truetype')
+  }
+
+@font-face {
+    font-family: 'Rubik';
+    src:  url('../assets/fonts/Rubik-VariableFont_wght.ttf') format('truetype')
+  }
 
 /* Color palette */
 /* Basic styles */
