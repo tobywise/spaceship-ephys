@@ -260,7 +260,7 @@ class GameScene extends Phaser.Scene {
                 var time = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds() + ':' + date.getMilliseconds();
                 var astVisible = false;
                 // console.log(this.scene);
-                if (this.last_asteroid != null && this.scene.scene.cameras.main.worldView.contains(this.last_asteroid.x,this.last_asteroid.y)) {
+                if (this.last_asteroid != null && this.scene.scene.cameras.main.worldView.contains(this.last_asteroid.x,300)) {
                     astVisible = true;
                   }
 
